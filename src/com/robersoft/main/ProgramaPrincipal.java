@@ -15,6 +15,7 @@ public class ProgramaPrincipal {
         System.out.print("Introduce el numero de animales para el Zoo");
         int numOfAnimals = intro.nextInt();
 
+
         
     }
 

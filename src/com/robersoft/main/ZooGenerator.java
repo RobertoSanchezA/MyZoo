@@ -72,8 +72,8 @@ public class ZooGenerator {
         String female = "Hembra";
 
         // genero un 1 para macho, 2 para hembra
-        int select = (int) (Math.random() * (2 - 1 + 1) + 1);
-        if (select == 1)
+        double select = Math.random();
+        if (select <= 0.5)
             return male;
         else
             return female;
@@ -90,7 +90,7 @@ public class ZooGenerator {
     public void generateZoo(int numOfSpaces, int numOfAnimals) {
         // genero un numero con el que se crea el animal aleatorio
 
-        if (numOfAnimals == numOfSpaces) {
+        if (numOfAnimals == numOfSpaces || numOfSpaces > numOfAnimals) {
             for (int i = 0; i < numOfAnimals; i++) {
                 int random = (int) (Math.random() * 6);
                 switch (random) {
@@ -132,6 +132,9 @@ public class ZooGenerator {
 
                 }
             }
+        } else if (numOfSpaces/2 == numOfAnimals){
+            //Aqui se supone tengro que crear animales con una pareja.
+            // pero no se me ocurre como darle la vuelta al atributo
         }
     }
 }
